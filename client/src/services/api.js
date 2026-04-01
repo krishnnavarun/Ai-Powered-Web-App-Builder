@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://nxtbuild-backend-6qa9.onrender.com/api';
 
 const getHeaders = () => {
   const token = Cookies.get('token');
