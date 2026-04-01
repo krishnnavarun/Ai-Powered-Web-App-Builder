@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { AuthContext } from './context/AuthContext.jsx';
-import LandingPage from './pages/LandingPage.jsx';
-import LoginPage from './pages/LoginPage.jsx';
-import DashboardPage from './pages/DashboardPage.jsx';
-import Navbar from './components/Navbar.jsx';
-import ProtectedRoute from './components/ProtectedRoute.jsx';
+import { AuthContext } from './src/context/AuthContext.jsx';
+import LandingPage from './src/pages/LandingPage.jsx';
+import LoginPage from './src/pages/LoginPage.jsx';
+import DashboardPage from './src/pages/DashboardPage.jsx';
+import BuilderPage from './src/pages/BuilderPage.jsx';
+import Navbar from './src/components/Navbar.jsx';
+import ProtectedRoute from './src/components/ProtectedRoute.jsx';
 
 function App() {
   const { user, loading } = useContext(AuthContext);
@@ -30,6 +31,15 @@ function App() {
             <ProtectedRoute>
               <Navbar />
               <DashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/builder/:projectId"
+          element={
+            <ProtectedRoute>
+              <Navbar />
+              <BuilderPage />
             </ProtectedRoute>
           }
         />

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContext } from '../context/ToastContext.jsx';
-import ProjectCard from './components/ProjectCard.jsx';
+import ProjectCard from '../components/ProjectCard.jsx';
 import { getProjects, createProject, deleteProject } from '../services/projectService.js';
 import '../styles/dashboard.css';
 
